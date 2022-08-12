@@ -25,7 +25,7 @@ const Product = ({ product, handleAddToCart }) => {
       <div className='product-info'>
         <div>
           <p>
-            {name} {color}
+            {name}{color}
           </p>
           <small>$ {price}</small>
         </div>

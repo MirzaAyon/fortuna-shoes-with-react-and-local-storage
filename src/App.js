@@ -8,6 +8,7 @@ function App() {
       <Navbar></Navbar>
       <Shop></Shop>
       {/* card and product ke rakhlam shop er vitore r shop and navbar ke rakhlam app er vitore */}
+      {/* shop er modhe main kahini ache */}
     </>
   );
 }
