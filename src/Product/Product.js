@@ -4,6 +4,8 @@ import { BsCartPlus } from "react-icons/bs";
 
 const Product = ({ product, handleAddToCart }) => {
   const [flipImage, setFlipImage] = useState(false);
+  //flip image state newa hoise jeta bydefault false ache
+  console.log(flipImage);
   const { name, pairImage, color, price, sideImage } = product;
   return (
     <div
@@ -11,12 +13,14 @@ const Product = ({ product, handleAddToCart }) => {
       onMouseEnter={() => setFlipImage(true)}
       onMouseLeave={() => setFlipImage(false)}
     >
+      {/* er modhe 2 ta function newa hoise mouse dhukle true hbe r ber hole false hbe  */}
       <div className='image-container'>
         <img
           className='product-image'
           src={flipImage ? sideImage : pairImage}
           alt=''
         />
+        {/* ternary operator diye side img naki double img eta set kore dilam */}
       </div>
       <div className='product-info'>
         <div>
