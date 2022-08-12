@@ -8,6 +8,7 @@
   display: grid;
   gap: 50px 0;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  /* auto fit r minmax er karone grid gula responsive hye geche */
 }
 
 .cart-container {
