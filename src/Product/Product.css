@@ -5,19 +5,24 @@
   height: 400px;
   width: 300px;
   overflow: hidden;
+
+  /* overflow hidden na dile transition thik moto kaj korbe na border thik mto visible hbe na  */
   justify-self: center;
   transition: all ease-in-out 300ms;
+  /* transition er fole box ta move kortese and etar time likha ache */
 }
 
 .product-card:hover {
   transform: translateX(-10px);
+  /* x axis borabor move */
   transform: translateY(-10px);
+  /* y axis borabor move  */
   box-shadow: rgba(0, 0, 0, 0.4) -5px 5px, rgba(0, 0, 0, 0.3) -10px 10px,
     rgba(0, 0, 0, 0.2) -15px 15px, rgba(0, 0, 0, 0.1) -20px 20px,
     rgba(0, 0, 0, 0.05) -25px 25px;
 }
 
-.product-card > .image-container > img {
+.product-card .image-container img {
   height: 300px;
   width: 300px;
 }
