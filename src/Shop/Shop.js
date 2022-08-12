@@ -9,6 +9,7 @@ const Shop = () => {
   console.log(products);
 
   useEffect(() => {
+    //data.json er bodole direct github er boots data theke data niye ta raw hishebe ekhane show kora jabe ekhetre datae giye raw te click korlei hbe link diye dbe 
     fetch("data.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
