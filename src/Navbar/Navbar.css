@@ -1,13 +1,22 @@
 nav {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
   height: 80px;
   padding: 0 50px;
   display: flex;
   align-items: center;
+  /* justify-content: center; */
 }
 
 nav h1 {
   font-size: 4rem;
   font-family: "Bonheur Royale", cursive;
   color: white;
+}
+
+h5 {
+  color: white;
+}
+
+nav h1:hover {
+  color: bisque;
 }

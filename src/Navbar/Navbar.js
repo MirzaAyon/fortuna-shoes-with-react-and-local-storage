@@ -4,7 +4,8 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <nav>
-      <h1>Heels Villa</h1>
+      <h1><marquee behavior="" direction="">Fortuna ShoeS</marquee></h1>
+
     </nav>
   );
 };
