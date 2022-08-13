@@ -6,6 +6,7 @@ import "./Shop.css";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  console.log(cart)
   console.log(products);
 
   useEffect(() => {
@@ -17,6 +18,11 @@ const Shop = () => {
 
   const handleAddToCart = (selectedProduct) => {
     console.log("Add to cart");
+    // const newCart = [selectedProduct]; //ekhan emutation problem hbe 
+    const newCart = [...cart, selectedProduct];
+    setCart(newCart)
+    //obj er upr map possible na tai array banalam
+    //kintu ekhn new ta click korle old ta change hye jachee
   };
 
   const handleClearCart = () => {
