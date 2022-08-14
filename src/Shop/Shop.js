@@ -19,7 +19,18 @@ const Shop = () => {
   const handleAddToCart = (selectedProduct) => {
     console.log("Add to cart");
     // const newCart = [selectedProduct]; //ekhan emutation problem hbe 
-    const newCart = [...cart, selectedProduct];
+    let newCart = [];
+    const exist = cart.find((product) => product.id == selectedProduct.id);
+    if (!exist) {
+      selectedProduct.quantity = 1;
+      newCart = [...cart, selectedProduct];
+    } else {
+      const rest = cart.filter(product => product.id != selectedProduct.id)
+      selectedProduct.quantity = selectedProduct.quantity + 1;
+      // newCart = [...cart, selectedProduct]
+      newCart = [...rest, selectedProduct]
+    }
+    console.log(exist);
     setCart(newCart)
     //obj er upr map possible na tai array banalam
     //kintu ekhn new ta click korle old ta change hye jachee
