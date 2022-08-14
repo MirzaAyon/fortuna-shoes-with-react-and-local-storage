@@ -25,5 +25,8 @@ const addToLocalStorage = (id) => {
     //stringfy na korle obj obj show hbe 
     //square braket er vitore dynamic data pass kora jae tai square braket diye korlam
 }
+const clearLocalStorage = () => {
+    localStorage.removeItem('shopping_cart');
+}
 
-export { addToLocalStorage, getFromLocalStorage };
+export { addToLocalStorage, getFromLocalStorage, clearLocalStorage };

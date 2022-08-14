@@ -3,7 +3,7 @@ import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 import { addToLocalStorage } from "./Utilities/Utilities";
-import { getFromLocalStorage } from "./Utilities/Utilities";
+import { getFromLocalStorage, clearLocalStorage } from "./Utilities/Utilities";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -64,8 +64,10 @@ const Shop = () => {
   const handleClearCart = () => {
     const newCart = [];
     setCart(newCart)
+    clearLocalStorage();
   };
-
+  //one specific jinish local sto theke delete korar jnno id use korte hbe 
+  //id diye jmne access korsi thik temni obj theke delete korte parbo
 
 
   //local sto er concept gula js folder e ache 
