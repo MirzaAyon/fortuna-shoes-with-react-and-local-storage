@@ -41,6 +41,12 @@ const Shop = () => {
     setCart(newCart)
   };
 
+
+
+  //local sto er concept gula js folder e ache 
+
+
+
   return (
     <>
       <div className='shop'>
@@ -62,7 +68,15 @@ const Shop = () => {
             handleClearCart={handleClearCart}
           />
         </div>
+
+
+
+
+        {/* ekhn local sto er koekta jinish dekhbo */}
+
+
       </div>
+
     </>
   );
 };
