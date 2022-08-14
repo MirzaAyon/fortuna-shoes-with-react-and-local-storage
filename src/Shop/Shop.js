@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
+import { addToLocalStorage } from "./Utilities/Utilities";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -31,6 +32,7 @@ const Shop = () => {
       newCart = [...rest, selectedProduct]
     }
     console.log(exist);
+    addToLocalStorage(selectedProduct.id);
     setCart(newCart)
     //obj er upr map possible na tai array banalam
     //kintu ekhn new ta click korle old ta change hye jachee
