@@ -21,6 +21,8 @@ const Cart = ({ cart, products, handleClearCart }) => {
   useEffect(() => {
     if (cart.length > 0) {
       setOffer(true)
+    } else {
+      setOffer(false);
     }
   }, [cart])
 
