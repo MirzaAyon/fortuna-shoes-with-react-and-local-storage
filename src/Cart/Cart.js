@@ -12,8 +12,22 @@ const Cart = ({ cart, products, handleClearCart }) => {
   const handleOffer = () => {
     const randomNumber = Math.floor((Math.random() * products.length));
     const item = products[randomNumber]
-    console.log(item);
+    console.log(item); //inspact e random item showing
+    setFreeProduct(item);
   }
+
+  // const obj = { abc: 1, det: 2 };
+  // console.log(Object.keys(obj)) //array pabo
+  // console.log(Object.keys(obj.length)) 
+  //array er length pabo
+  // const obj = {};
+  // console.log(Object.keys(obj)) //array pabo
+  // console.log(Object.keys(obj.length))
+  //array er length pabo
+
+  //line 19 theke 26 holo conceptss
+
+
   return (
     <div className='cart'>
       <div className='cart-header'>
@@ -40,6 +54,18 @@ const Cart = ({ cart, products, handleClearCart }) => {
       <p><marquee behavior="" direction="">Buy one get one free</marquee></p>
       <button className="offer-button" onClick={handleOffer}>Get one for me</button>
       {/* ekhane kno pm pass kora lgbe na  */}
+
+      {Object.keys(freeProduct).length > 0 && (
+        <div className='cart-item'>
+          <img src={freeProduct.pairImage} alt='' />
+          <div>
+            <p>
+              {freeProduct.name} {freeProduct.color}
+            </p>
+            <p>$ {freeProduct.price}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
