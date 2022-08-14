@@ -3,9 +3,11 @@ import "./Cart.css";
 import { IoTrashBin } from "react-icons/io5";
 
 const Cart = ({ cart, products, handleClearCart }) => {
+  const [offer, setOffer] = useState(false);
   console.log(products) //inspact e ekta array showing
   const [freeProduct, setFreeProduct] = useState({})
   //single product obj er modhe pabo tai empty obj dilam 
+  console.log(offer);
   const item = products[5];
   console.log(item);
 
@@ -15,6 +17,12 @@ const Cart = ({ cart, products, handleClearCart }) => {
     console.log(item); //inspact e random item showing
     setFreeProduct(item);
   }
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      setOffer(true)
+    }
+  }, [cart])
 
   // const obj = { abc: 1, det: 2 };
   // console.log(Object.keys(obj)) //array pabo
@@ -52,7 +60,8 @@ const Cart = ({ cart, products, handleClearCart }) => {
         </div>
       ))}
       <p><marquee behavior="" direction="">Buy one get one free</marquee></p>
-      <button className="offer-button" onClick={handleOffer}>Get one for me</button>
+      <button className={offer ? 'offer-button' : "offer-button-disabled"} onClick={handleOffer} disabled={!offer}>Get one for me</button>
+      {/* disabled false kore dile kaj korbe true korle kaj krbe na */}
       {/* ekhane kno pm pass kora lgbe na  */}
 
       {Object.keys(freeProduct).length > 0 && (
