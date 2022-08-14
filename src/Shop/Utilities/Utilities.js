@@ -26,4 +26,4 @@ const addToLocalStorage = (id) => {
     //square braket er vitore dynamic data pass kora jae tai square braket diye korlam
 }
 
-export { addToLocalStorage };
+export { addToLocalStorage, getFromLocalStorage };

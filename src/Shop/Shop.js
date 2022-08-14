@@ -3,6 +3,7 @@ import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 import { addToLocalStorage } from "./Utilities/Utilities";
+import { getFromLocalStorage } from "./Utilities/Utilities";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -16,6 +17,28 @@ const Shop = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  ///shop modhe set korar jnno useeffect dbo
+
+  useEffect(() => {
+    if (products.length) {
+      const storedProductsIds = getFromLocalStorage();
+      console.log(storedProductsIds)
+      const previousCart = [];
+      for (const id in storedProductsIds) {
+        console.log(id) //id showing
+        const foundProduct = products.find(product => product.id == id);
+        // console.log(foundProduct) //product shoing
+        if (foundProduct) {
+          const quantity = storedProductsIds[id];
+          foundProduct.quantity = quantity
+          previousCart.push(foundProduct)
+        }
+      }
+      setCart(previousCart)
+    }
+
+  }, [products])
 
   const handleAddToCart = (selectedProduct) => {
     console.log("Add to cart");
